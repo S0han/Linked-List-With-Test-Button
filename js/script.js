@@ -61,7 +61,7 @@ LinkedList.prototype.print = function() {
 	var node = this.head;
 	
 	//create a loop that will allow you to populate node with values
-	while (node != null){
+	while (node != null) {
 		s += node.content + "   ";
 		node = node.next; //make sure node points to next node
 	}
@@ -78,5 +78,47 @@ function addNode() {
 	var el = document.getElementById('v').value;
 	myList.add(el);
 	document.getElementById("output").innerHTML = myList.print();
+	var n = "You are currently on node " + (myList.length - 1) + ".";
+	document.getElementById("trav").innerHTML = n;
+}
 
+//this will allow you to go to the previous node when clicking the button
+function previousNode() {
+	if (myList.head == null) {
+		document.getElementById("trav").innerHTML = myList.print();
+	}
+
+	else if (myList.length == 1) {
+		var x = "You are currently on node " + (myList.length - 1) + ", also known as the head node.";
+		document.getElementById("trav").innerHTML = x;
+	}
+
+	else {
+		var y = "You are currently on node " + (myList.length - 1) + ".";
+		document.getElementById("trav").innerHTML = y;
+		myList.length--;
+	}
+}
+
+//this will allow you to go to the next node when clicking the button
+function nextNode() {
+	if (myList.head == null) {
+		document.getElementById("trav").innerHTML = myList.print();
+	}
+
+	else if (myList.length == 1) {
+		var x = "You are currently on node " + (myList.length - 1) + ", also known as the head node.";
+		document.getElementById("trav").innerHTML = x;
+	}
+
+	else if (myList.tail.length == myList.length) {
+		var b = "You are currently on node " + (myList.length - 1) + ", also known as the tail node.";
+		document.getElementById("trav").innerHTML = b;
+	}
+
+	else {
+		var y = "You are currently on node " + (myList.length - 1) + ".";
+		document.getElementById("trav").innerHTML = y;
+		myList.length++;
+	}
 }

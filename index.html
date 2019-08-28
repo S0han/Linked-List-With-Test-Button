@@ -9,11 +9,16 @@
 		<!-- this is the button and textbox input -->
 		<div id = "nodeAdditions">
 			<input type="textbox" id="v" value="Node 1" />
-			<input type="button" value="Add Node" onclick="addNode()"/>
+			<input type="button" value="Add Node" onclick="addNode()" />
+			<input type="button" value="Previous" id="previousNode" onclick="previousNode()" />
+			<input type="button" value="Next" onclick="nextNode()" />	
 		</div>
 
 		<!-- the javascript will insert its html into this div -->
 		<div id="output"></div>
+
+		<!-- this section will be for the travesing buttons -->
+		<div id="trav"></div>
 
 		<!-- add the script before closing body tags -->
 		<!-- this will call the functions with the button -->
